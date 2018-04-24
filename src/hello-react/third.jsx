@@ -1,12 +1,18 @@
 
-import React from 'react'
+import React from 'react';
+
 export class ThirdGreeting extends React.PureComponent {
+    state = {
+        greeting: 'Hello Word!',
+    }
     render() {
         return (
             <React.Fragment>
-                <span> Hello Word! </span>
+                <span> {this.state.greeting} </span>
                 <span> From third - React.PureComponent</span>
             </React.Fragment>
-        )
+        );
     }
 }
+
+export default ThirdGreeting;
