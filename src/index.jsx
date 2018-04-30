@@ -1,4 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-import { render4WaysOfGreeting } from './scenes/hello-react/index';
+import App from './App';
 
-render4WaysOfGreeting();
+ReactDOM.render(<App />, document.getElementById('app'));

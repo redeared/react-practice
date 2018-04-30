@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = () => {
     const isProduction = process.env.NODE_ENV ? process.env.NODE_ENV.trim() === 'production' : false;
@@ -21,6 +22,13 @@ module.exports = () => {
                     loader: 'babel-loader',
                     exclude: /node_modules/,
                 },
+                {
+                    test: /\.css/,
+                    use: ExtractTextPlugin.extract({
+                        use: 'css-loader',
+                        fallback: 'style-loader',
+                    }),
+                },
             ],
         },
 
@@ -30,6 +38,7 @@ module.exports = () => {
                 hash: true,
                 template: './index.html',
             }),
+            new ExtractTextPlugin('[name].css'),
         ],
 
         devServer: {

@@ -10,7 +10,9 @@ module.exports = {
     "linebreak-style": ["error", "windows"],
     "indent": ["error", 4],
     "react/jsx-indent": ["error", 4],
+    "react/jsx-indent-props": ["error", 4],
     "react/prop-types": 0
+
   },
   "env": {
     "browser": true
