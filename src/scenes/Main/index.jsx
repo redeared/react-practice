@@ -6,18 +6,21 @@ import FilmInfo from './components/FilmInfo';
 import Films from './components/Films';
 
 const initialState = {
-    filter: 'gender',
-    sort: 'date',
+    searchBy: 'title',
+    sortBy: 'date',
     view: 'search',
     selectedFilm: null,
+    currenSearchResult: null,
 };
 
-const filmsStub = (new Array(2)).fill({}, 0).map((elem, index) => (
+const genre = ['action', 'comedy', 'thriller'];
+
+const filmsStub = (new Array(14)).fill({}, 0).map((elem, index) => (
     {
         id: index,
         title: `stub${index}`,
         date: 1998 + index,
-        genre: 'Action',
+        genre: genre[Math.floor((Math.random() * genre.length))],
         duration: '165',
         description: 'winter coming, winter coming, winter coming, winter coming, winter coming...',
     }));
@@ -45,13 +48,23 @@ const statusBarStyle = {
 
 
 class Main extends Component {
-    state = initialState;
+    constructor(props) {
+        super(props);
+        this.state = initialState;
+    }
+
     getFilmsBySelectedFilmGenre() {
         if (this.state.selectedFilm.genre) {
             return sameGenreStub;
         }
         return [];
     }
+
+    getCurrentSearchResult = () => (
+        !this.state.currenSearchResult
+            ? filmsStub
+            : this.state.currenSearchResult
+    );
 
     selectFilm = (film) => {
         this.setState({
@@ -67,6 +80,17 @@ class Main extends Component {
         });
     }
 
+    search = (text) => {
+        const searchResult = filmsStub.filter(film => (
+            this.state.searchBy === 'title'
+                ? film.title.search(text) !== -1
+                : film.genre.search(text) !== -1
+        ));
+
+        this.setState({
+            currenSearchResult: searchResult,
+        });
+    }
     render() {
         if (this.state.view === 'film') {
             return (
@@ -93,11 +117,11 @@ class Main extends Component {
         return (
             <ErrorBoundary>
                 <div>
-                    <SearchBar />
+                    <SearchBar searchCallBack={this.search} />
                 </div>
                 <div style={contentContainer}>
                     <SearchResult
-                        items={filmsStub}
+                        items={this.getCurrentSearchResult()}
                         onItemClick={this.selectFilm}
                     />
                 </div>

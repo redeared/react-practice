@@ -9,9 +9,21 @@ const statusBarStyle = {
     padding: '0 4em 0 4em',
 };
 
+const emptyStyle = {
+    background: 'white',
+    display: 'flex',
+    flex: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+};
+
 const SearchResult = ({ items, onItemClick }) => {
     if (items.length === 0) {
-        return <Empty />;
+        return (
+            <div style={emptyStyle}>
+                <Empty />
+            </div>
+        );
     }
     return (
         <Fragment>
