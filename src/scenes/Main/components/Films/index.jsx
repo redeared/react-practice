@@ -1,11 +1,23 @@
 import React from 'react';
 import Item from './components/Item';
 
+const style = {
+    background: 'white',
+    padding: '1em',
+    flex: 'auto',
+};
+
+const itemStyle = {
+    display: 'inline-block',
+    width: '25%',
+};
+
 const Films = ({ items, onItemClick }) => (
-    <span>
+    <div style={style}>
         {
             items.map(item => (
                 <div
+                    style={itemStyle}
                     key={item.id}
                     onClick={() => onItemClick(item)}
                     role="presentation"
@@ -13,7 +25,7 @@ const Films = ({ items, onItemClick }) => (
                     <Item item={item} />
                 </div>))
         }
-    </span>
+    </div>
 );
 
 export default Films;

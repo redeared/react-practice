@@ -32,6 +32,18 @@ const sameGenreStub = (new Array(3)).fill({}, 0).map((elem, index) => (
         description: 'summer coming, summer coming, summer coming, summer coming, summer coming...',
     }));
 
+const contentContainer = {
+    display: 'flex',
+    flexDirection: 'column',
+    flex: 'auto',
+};
+
+const statusBarStyle = {
+    background: 'ghostwhite',
+    padding: '0 4em 0 4em',
+};
+
+
 class Main extends Component {
     state = initialState;
     getFilmsBySelectedFilmGenre() {
@@ -58,45 +70,38 @@ class Main extends Component {
     render() {
         if (this.state.view === 'film') {
             return (
-                <div>
-                    <ErrorBoundary>
-                        <div>
-                            <FilmInfo
-                                film={this.state.selectedFilm}
-                                backCallBack={this.backToSearch}
-                            />
-                        </div>
-                        <div>
-                            <hr />
-                            Films by {this.state.selectedFilm.genre} genre
-                        </div>
-                        <div>
-                            <hr />
-                            <Films
-                                items={this.getFilmsBySelectedFilmGenre()}
-                                onItemClick={this.selectFilm}
-                            />
-                        </div>
-                    </ErrorBoundary>
-                </div>
-            );
-        }
-
-        return (
-            <div>
                 <ErrorBoundary>
                     <div>
-                        <SearchBar />
+                        <FilmInfo
+                            film={this.state.selectedFilm}
+                            backCallBack={this.backToSearch}
+                        />
                     </div>
-                    <div>
-                        <hr />
-                        <SearchResult
-                            items={filmsStub}
+                    <div style={statusBarStyle}>
+                        Films by {this.state.selectedFilm.genre} genre
+                    </div>
+                    <div style={contentContainer}>
+                        <Films
+                            items={this.getFilmsBySelectedFilmGenre()}
                             onItemClick={this.selectFilm}
                         />
                     </div>
                 </ErrorBoundary>
-            </div>
+            );
+        }
+
+        return (
+            <ErrorBoundary>
+                <div>
+                    <SearchBar />
+                </div>
+                <div style={contentContainer}>
+                    <SearchResult
+                        items={filmsStub}
+                        onItemClick={this.selectFilm}
+                    />
+                </div>
+            </ErrorBoundary>
         );
     }
 }
