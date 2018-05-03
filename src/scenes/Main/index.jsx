@@ -6,33 +6,25 @@ import FilmInfo from './components/FilmInfo';
 import Films from './components/Films';
 
 const initialState = {
-    searchBy: 'title',
+    searchByTitle: true,
+    searchByGenre: false,
     sortBy: 'date',
     view: 'search',
     selectedFilm: null,
     currenSearchResult: null,
 };
 
-const genre = ['action', 'comedy', 'thriller'];
+const genres = ['Action', 'Comedy', 'Thriller', 'Fantasy', 'Adventure'];
+const get2RandomGeners = () => `${genres[Math.floor((Math.random() * genres.length))]}, ${genres[Math.floor((Math.random() * genres.length))]}`;
 
-const filmsStub = (new Array(14)).fill({}, 0).map((elem, index) => (
+const filmsStub = (new Array(50)).fill({}, 0).map((elem, index) => (
     {
         id: index,
-        title: `stub${index}`,
+        title: `stub${index} ${genres[index % genres.length]}`,
         date: 1998 + index,
-        genre: genre[Math.floor((Math.random() * genre.length))],
+        genre: get2RandomGeners(),
         duration: '165',
         description: 'winter coming, winter coming, winter coming, winter coming, winter coming...',
-    }));
-
-const sameGenreStub = (new Array(3)).fill({}, 0).map((elem, index) => (
-    {
-        id: index,
-        title: `same genre stub${index}`,
-        date: 1998 + index,
-        genre: 'Comedy',
-        duration: '154',
-        description: 'summer coming, summer coming, summer coming, summer coming, summer coming...',
     }));
 
 const contentContainer = {
@@ -46,6 +38,17 @@ const statusBarStyle = {
     padding: '0 4em 0 4em',
 };
 
+const searchByGenre = (genresStr) => {
+    if (genresStr && genresStr.split) {
+        const geners = genresStr.split(',').map(v => v.trim().toLowerCase());
+        return filmsStub.reduce((prev, curr) => {
+            const filmGenre = curr.genre.split(',').map(v => v.trim().toLowerCase());
+            const allGenreFound = geners.every(g => filmGenre.find(filmG => filmG === g));
+            return allGenreFound ? [...prev, curr] : prev;
+        }, []);
+    }
+    return [];
+};
 
 class Main extends Component {
     constructor(props) {
@@ -54,8 +57,9 @@ class Main extends Component {
     }
 
     getFilmsBySelectedFilmGenre() {
-        if (this.state.selectedFilm.genre) {
-            return sameGenreStub;
+        const filmGenre = this.state.selectedFilm.genre;
+        if (filmGenre) {
+            return searchByGenre(filmGenre);
         }
         return [];
     }
@@ -80,12 +84,22 @@ class Main extends Component {
         });
     }
 
+    updateSearchFilter = (filters) => {
+        this.setState({
+            searchByTitle: filters.title,
+            searchByGenre: filters.genre,
+        });
+    }
+
     search = (text) => {
-        const searchResult = filmsStub.filter(film => (
-            this.state.searchBy === 'title'
-                ? film.title.search(text) !== -1
-                : film.genre.search(text) !== -1
-        ));
+        const searchResult = filmsStub.filter((film) => {
+            const str = text.toLowerCase();
+            const foundTitle = this.state.searchByTitle
+                && film.title.toLowerCase().search(str) !== -1;
+            const foundGenre = this.state.searchByGenre
+                && film.genre.toLowerCase().search(str) !== -1;
+            return foundTitle || foundGenre;
+        });
 
         this.setState({
             currenSearchResult: searchResult,
@@ -117,7 +131,14 @@ class Main extends Component {
         return (
             <ErrorBoundary>
                 <div>
-                    <SearchBar searchCallBack={this.search} />
+                    <SearchBar
+                        searchCallBack={this.search}
+                        filters={{
+                            title: this.state.searchByTitle,
+                            genre: this.state.searchByGenre,
+                        }}
+                        updateSearchFilter={this.updateSearchFilter}
+                    />
                 </div>
                 <div style={contentContainer}>
                     <SearchResult

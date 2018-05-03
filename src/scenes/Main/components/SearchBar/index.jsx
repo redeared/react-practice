@@ -25,6 +25,13 @@ class SearchBar extends Component {
         this.props.searchCallBack(this.state.searchText);
     }
 
+    updateFilter = (filters) => {
+        this.props.updateSearchFilter({
+            title: filters.title,
+            genre: filters.genre,
+        });
+    }
+
     render() {
         return (
             <div style={style}>
@@ -38,7 +45,10 @@ class SearchBar extends Component {
                     />
                 </div>
                 <div>
-                    SEARCH BY: <SearchFilter />
+                    SEARCH BY: <SearchFilter
+                        filters={this.props.filters}
+                        changeFilter={this.updateFilter}
+                    />
                     <div style={{ float: 'right' }}>
                         <SearchButton onClick={this.searchCallBack} />
                     </div>

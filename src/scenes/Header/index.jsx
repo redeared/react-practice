@@ -7,7 +7,7 @@ const transparentDiv = {
 };
 
 const textBlock = {
-    color: 'pink',
+    color: '#f45362',
     fontWeight: 'bold',
     position: 'absolute',
     zIndex: 1,
