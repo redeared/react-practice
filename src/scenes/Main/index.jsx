@@ -11,17 +11,18 @@ const initialState = {
     sortBy: 'date',
     view: 'search',
     selectedFilm: null,
-    currenSearchResult: null,
+    currentSearchResult: null,
 };
 
 const genres = ['Action', 'Comedy', 'Thriller', 'Fantasy', 'Adventure'];
 const get2RandomGeners = () => `${genres[Math.floor((Math.random() * genres.length))]}, ${genres[Math.floor((Math.random() * genres.length))]}`;
 
-const filmsStub = (new Array(50)).fill({}, 0).map((elem, index) => (
+const filmsStub = (new Array(42)).fill({}, 0).map((elem, index) => (
     {
         id: index,
         title: `stub${index} ${genres[index % genres.length]}`,
         date: 1998 + index,
+        rating: Math.floor((Math.random() * 10)),
         genre: get2RandomGeners(),
         duration: '165',
         description: 'winter coming, winter coming, winter coming, winter coming, winter coming...',
@@ -65,9 +66,9 @@ class Main extends Component {
     }
 
     getCurrentSearchResult = () => (
-        !this.state.currenSearchResult
+        !this.state.currentSearchResult
             ? filmsStub
-            : this.state.currenSearchResult
+            : this.state.currentSearchResult
     );
 
     selectFilm = (film) => {
@@ -92,18 +93,24 @@ class Main extends Component {
     }
 
     search = (text) => {
-        const searchResult = filmsStub.filter((film) => {
-            const str = text.toLowerCase();
-            const foundTitle = this.state.searchByTitle
+        if (text) {
+            const searchResult = filmsStub.filter((film) => {
+                const str = text.toLowerCase();
+                const foundTitle = this.state.searchByTitle
                 && film.title.toLowerCase().search(str) !== -1;
-            const foundGenre = this.state.searchByGenre
+                const foundGenre = this.state.searchByGenre
                 && film.genre.toLowerCase().search(str) !== -1;
-            return foundTitle || foundGenre;
-        });
+                return foundTitle || foundGenre;
+            });
 
-        this.setState({
-            currenSearchResult: searchResult,
-        });
+            this.setState({
+                currentSearchResult: searchResult,
+            });
+        } else {
+            this.setState({
+                currentSearchResult: null,
+            });
+        }
     }
     render() {
         if (this.state.view === 'film') {

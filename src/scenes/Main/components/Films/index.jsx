@@ -12,20 +12,25 @@ const itemStyle = {
     width: '25%',
 };
 
-const Films = ({ items, onItemClick }) => (
-    <div style={style}>
-        {
-            items.map(item => (
-                <div
-                    style={itemStyle}
-                    key={item.id}
-                    onClick={() => onItemClick(item)}
-                    role="presentation"
-                >
-                    <Item item={item} />
-                </div>))
-        }
-    </div>
-);
+const Films = ({ items, onItemClick }) => {
+    if (!items) {
+        return null;
+    }
+    return (
+        <div style={style}>
+            {
+                items.map(item => (
+                    <div
+                        style={itemStyle}
+                        key={item.id}
+                        onClick={() => onItemClick(item)}
+                        role="presentation"
+                    >
+                        <Item item={item} />
+                    </div>))
+            }
+        </div>
+    );
+};
 
 export default Films;
