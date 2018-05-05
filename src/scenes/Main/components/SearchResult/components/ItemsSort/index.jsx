@@ -1,33 +1,22 @@
 import React, { Fragment, Component } from 'react';
 
+const activeSortOption = {
+    color: '#f45362',
+};
 
 class ItemsSort extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            sortByRating: false,
-            sortByReleaseDate: false,
-            ...props.sortOrder,
-        };
-    }
-
+    getSortOrder = () => this.props.sortOrder;
     sortByDate = () => {
-        this.setState((prev, props) => {
-            props.changeSortOrder({
-                sortByReleaseDate: !this.state.sortByReleaseDate,
-                sortByRating: this.state.sortByRating,
-            });
-            return { sortByReleaseDate: !this.state.sortByReleaseDate };
+        this.props.changeSortOrder({
+            sortByReleaseDate: !this.getSortOrder().sortByReleaseDate,
+            sortByRating: this.getSortOrder().sortByRating,
         });
     }
 
     sortByRating = () => {
-        this.setState((prev, props) => {
-            props.changeSortOrder({
-                sortByReleaseDate: this.state.sortByReleaseDate,
-                sortByRating: !this.state.sortByRating,
-            });
-            return { sortByRating: !this.state.sortByRating };
+        this.props.changeSortOrder({
+            sortByReleaseDate: this.getSortOrder().sortByReleaseDate,
+            sortByRating: !this.getSortOrder().sortByRating,
         });
     }
 
@@ -37,7 +26,7 @@ class ItemsSort extends Component {
                 Sort by:
                 {' '}
                 <span
-                    style={this.state.sortByReleaseDate ? { color: '#f45362' } : {}}
+                    style={this.getSortOrder().sortByReleaseDate ? activeSortOption : {}}
                     onClick={this.sortByDate}
                     tabIndex="0"
                     role="button"
@@ -47,7 +36,7 @@ class ItemsSort extends Component {
                 </span>
                 {' '}
                 <span
-                    style={this.state.sortByRating ? { color: '#f45362' } : {}}
+                    style={this.getSortOrder().sortByRating ? activeSortOption : {}}
                     onClick={this.sortByRating}
                     tabIndex="0"
                     role="button"

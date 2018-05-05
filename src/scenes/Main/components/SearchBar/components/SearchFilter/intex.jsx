@@ -1,40 +1,37 @@
 import React, { Fragment, Component } from 'react';
 
+const activeSearchOption = { backgroundColor: '#f45362' };
 class SearchFilter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            title: false,
-            genre: false,
-            ...props.filters,
-        };
-    }
-
+    getFilters = () => this.props.filters;
     handleTitleClick = () => {
-        this.setState((prev, props) => {
-            props.changeFilter({
-                title: !this.state.title,
-                genre: this.state.genre,
-            });
-            return { title: !this.state.title };
+        this.props.changeFilter({
+            title: !this.getFilters().title,
+            genre: this.getFilters().genre,
         });
     }
 
     handleGenreClick = () => {
-        this.setState((prev, props) => {
-            props.changeFilter({
-                title: this.state.title,
-                genre: !this.state.genre,
-            });
-            return { genre: !this.state.genre };
+        this.props.changeFilter({
+            title: this.getFilters().title,
+            genre: !this.getFilters().genre,
         });
     }
 
     render() {
         return (
             <Fragment>
-                <button style={this.state.title ? { backgroundColor: '#f45362' } : {}} onClick={this.handleTitleClick}>TITLE</button >
-                <button style={this.state.genre ? { backgroundColor: '#f45362' } : {}} onClick={this.handleGenreClick}>GENRE</button >
+                <button
+                    style={this.getFilters().title ? activeSearchOption : {}}
+                    onClick={this.handleTitleClick}
+                >
+                    TITLE
+                </button >
+                <button
+                    style={this.getFilters().genre ? activeSearchOption : {}}
+                    onClick={this.handleGenreClick}
+                >
+                    GENRE
+                </button >
             </Fragment>
         );
     }
