@@ -11,6 +11,8 @@ const style = {
     paddingRight: '4em',
 };
 
+const searchButtonPosition = { float: 'right' };
+
 class SearchBar extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +51,7 @@ class SearchBar extends Component {
                         filters={this.props.filters}
                         changeFilter={this.updateFilter}
                     />
-                    <div style={{ float: 'right' }}>
+                    <div style={searchButtonPosition}>
                         <SearchButton onClick={this.searchCallBack} />
                     </div>
                 </div>

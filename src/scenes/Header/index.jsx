@@ -1,12 +1,12 @@
 import React from 'react';
 
-const transparentDiv = {
+const background = {
     background: 'black',
     opacity: 0.7,
     height: '1.5em',
 };
 
-const textBlock = {
+const headerText = {
     color: '#f45362',
     fontWeight: 'bold',
     position: 'absolute',
@@ -16,8 +16,8 @@ const textBlock = {
 
 const Header = () => (
     <div>
-        <span style={textBlock}> netflixroulette </span>
-        <div style={transparentDiv} />
+        <span style={headerText}> netflixroulette </span>
+        <div style={background} />
     </div>
 );
 

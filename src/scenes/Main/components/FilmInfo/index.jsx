@@ -6,14 +6,14 @@ const style = {
     paddingLeft: '1em',
 };
 
-const transparentDiv = {
+const background = {
     background: 'black',
     opacity: 0.7,
     color: 'white',
 };
 
 const FilmInfo = ({ film, backCallBack }) => (
-    <div style={{ ...style, ...transparentDiv }}>
+    <div style={{ ...style, ...background }}>
         <div>
             <button onClick={() => backCallBack()}>SEARCH</button>
         </div>

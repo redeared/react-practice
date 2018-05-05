@@ -17,6 +17,8 @@ const emptyStyle = {
     justifyContent: 'center',
 };
 
+const sortingControlsPosition = { float: 'right' };
+
 class SearchResult extends Component {
     constructor(props) {
         super(props);
@@ -54,7 +56,7 @@ class SearchResult extends Component {
             <Fragment>
                 <div style={statusBarStyle}>
                     <ItemsStatus items={this.getItems()} />
-                    <span style={{ float: 'right' }}>
+                    <span style={sortingControlsPosition}>
                         <ItemsSort
                             sortOrder={{
                                 sortByRating: this.state.sortByRating,
