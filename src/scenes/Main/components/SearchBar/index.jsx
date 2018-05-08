@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import SearchField from './components/SearchField';
 import SearchButton from './components/SearchButton';
 import SearchFilter from './components/SearchFilter/intex';
+import { transparentPanel } from '../../../../styleguide/style';
 
-const style = {
-    background: 'black',
-    opacity: 0.7,
-    color: 'white',
+const contentPadding = {
     paddingLeft: '4em',
     paddingRight: '4em',
 };
@@ -36,7 +34,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div style={style}>
+            <div style={{ ...transparentPanel, ...contentPadding }}>
                 <div>
                     FIND YOUR MOVIE
                 </div>

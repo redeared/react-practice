@@ -1,19 +1,14 @@
 import React from 'react';
 import ImagePreview from '../../../../components/ImagePreview';
 import Rating from './components/Rating';
+import { transparentPanel } from '../../../../styleguide/style';
 
 const style = {
     paddingLeft: '1em',
 };
 
-const background = {
-    background: 'black',
-    opacity: 0.7,
-    color: 'white',
-};
-
 const FilmInfo = ({ film, backCallBack }) => (
-    <div style={{ ...style, ...background }}>
+    <div style={{ ...style, ...transparentPanel }}>
         <div>
             <button onClick={() => backCallBack()}>SEARCH</button>
         </div>
