@@ -1,9 +1,9 @@
 import React from 'react';
-import Item from './components/Item';
+import Item from './components/Film';
 import { RowsLayout } from '../../../../components/LayoutContainers';
 
 const itemStyle = {
-    width: '25%',
+    flex: '1 1 25%',
 };
 
 const Films = ({ items, onItemClick }) => {

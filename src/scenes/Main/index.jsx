@@ -4,7 +4,6 @@ import SearchBar from './components/SearchBar';
 import SearchResult from './components/SearchResult';
 import FilmInfo from './components/FilmInfo';
 import Films from './components/Films';
-import { ColumnsLayout } from '../../components/LayoutContainers';
 
 const initialState = {
     searchByTitle: true,

@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react';
 import FilmCover from './components/FilmCover';
 
-const Item = ({ item }) => (
+const Film = ({ item }) => (
     <Fragment>
         <FilmCover src="" label={item.title} />
         <div>
@@ -15,4 +15,4 @@ const Item = ({ item }) => (
     </Fragment>
 );
 
-export default Item;
+export default Film;
