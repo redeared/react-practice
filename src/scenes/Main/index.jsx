@@ -112,7 +112,7 @@ class Main extends Component {
                 <ErrorBoundary>
                     <FilmInfo
                         film={this.state.selectedFilm}
-                        backCallBack={this.backToSearch}
+                        onBackToSearch={this.backToSearch}
                     />
                     <div style={statusBarStyle}>
                         Films by {this.state.selectedFilm.genre} genre
@@ -128,7 +128,7 @@ class Main extends Component {
         return (
             <ErrorBoundary>
                 <SearchBar
-                    searchCallBack={this.search}
+                    onSearch={this.search}
                     filters={{
                         title: this.state.searchByTitle,
                         genre: this.state.searchByGenre,

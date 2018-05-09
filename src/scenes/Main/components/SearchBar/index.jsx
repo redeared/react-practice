@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SearchField from './components/SearchField';
+import TextSearchField from './components/TextSearchField';
 import SearchButton from './components/SearchButton';
 import SearchFilter from './components/SearchFilter/intex';
 import { transparentPanel } from '../../../../styleguide/style';
@@ -21,8 +21,8 @@ class SearchBar extends Component {
         this.setState({ searchText: text });
     };
 
-    searchCallBack = () => {
-        this.props.searchCallBack(this.state.searchText);
+    search = () => {
+        this.props.onSearch(this.state.searchText);
     }
 
     updateFilter = (filters) => {
@@ -39,9 +39,9 @@ class SearchBar extends Component {
                     FIND YOUR MOVIE
                 </div>
                 <div>
-                    <SearchField
-                        inputCallBack={this.updateSearchText}
-                        enterCallBack={this.searchCallBack}
+                    <TextSearchField
+                        onChange={this.updateSearchText}
+                        onEnter={this.search}
                     />
                 </div>
                 <div>
@@ -50,7 +50,7 @@ class SearchBar extends Component {
                         changeFilter={this.updateFilter}
                     />
                     <div style={searchButtonPosition}>
-                        <SearchButton onClick={this.searchCallBack} />
+                        <SearchButton onClick={this.search} />
                     </div>
                 </div>
             </div>

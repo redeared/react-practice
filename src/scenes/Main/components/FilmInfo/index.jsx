@@ -7,10 +7,10 @@ const style = {
     paddingLeft: '1em',
 };
 
-const FilmInfo = ({ film, backCallBack }) => (
+const FilmInfo = ({ film, onBackToSearch }) => (
     <div style={{ ...style, ...transparentPanel }}>
         <div>
-            <button onClick={() => backCallBack()}>SEARCH</button>
+            <button onClick={() => onBackToSearch()}>SEARCH</button>
         </div>
         <ImagePreview src="" label={film.title} />
         <div>
