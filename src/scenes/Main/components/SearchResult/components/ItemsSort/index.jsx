@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { hightLightColor } from '../../../../../../styleguide/style';
+import { highlightColor } from '../../../../../../styleguide/style';
 
 class ItemsSort extends Component {
     getSortOrder = () => this.props.sortOrder;
@@ -23,7 +23,7 @@ class ItemsSort extends Component {
                 Sort by:
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByReleaseDate ? hightLightColor : {}}
+                    style={this.getSortOrder().sortByReleaseDate ? highlightColor : {}}
                     onClick={this.sortByDate}
                     tabIndex="0"
                     role="button"
@@ -33,7 +33,7 @@ class ItemsSort extends Component {
                 </span>
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByRating ? hightLightColor : {}}
+                    style={this.getSortOrder().sortByRating ? highlightColor : {}}
                     onClick={this.sortByRating}
                     tabIndex="0"
                     role="button"

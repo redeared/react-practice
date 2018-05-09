@@ -1,14 +1,15 @@
 import React from 'react';
-import { transparentPanel, hightLightColor } from '../../styleguide/style';
+import { transparentPanel, highlightColor } from '../../styleguide/style';
 
 const headerText = {
+    ...highlightColor,
     fontWeight: 'bold',
     paddingLeft: '4em',
 };
 
 const Header = () => (
     <div style={transparentPanel}>
-        <span style={{ ...hightLightColor, ...headerText }}> netflixroulette </span>
+        <span style={headerText}> netflixroulette </span>
     </div>
 );
 
