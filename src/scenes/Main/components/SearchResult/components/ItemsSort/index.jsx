@@ -23,7 +23,7 @@ class ItemsSort extends Component {
                 Sort by:
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByReleaseDate ? highlightColor : {}}
+                    style={this.getSortOrder().sortByReleaseDate ? highlightColor : null}
                     onClick={this.sortByDate}
                     tabIndex="0"
                     role="button"
@@ -33,7 +33,7 @@ class ItemsSort extends Component {
                 </span>
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByRating ? highlightColor : {}}
+                    style={this.getSortOrder().sortByRating ? highlightColor : null}
                     onClick={this.sortByRating}
                     tabIndex="0"
                     role="button"

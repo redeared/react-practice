@@ -22,13 +22,13 @@ class SearchFilter extends Component {
         return (
             <Fragment>
                 <button
-                    style={this.getFilters().title ? activeSearchOption : {}}
+                    style={this.getFilters().title ? activeSearchOption : null}
                     onClick={this.handleTitleClick}
                 >
                     TITLE
                 </button >
                 <button
-                    style={this.getFilters().genre ? activeSearchOption : {}}
+                    style={this.getFilters().genre ? activeSearchOption : null}
                     onClick={this.handleGenreClick}
                 >
                     GENRE
