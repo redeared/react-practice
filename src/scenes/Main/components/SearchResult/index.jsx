@@ -3,6 +3,7 @@ import Empty from './components/Empty';
 import ItemsStatus from './components/ItemsStatus';
 import ItemsSort from './components/ItemsSort';
 import Films from '../Films';
+import { ColumnsLayout } from '../../../../components/LayoutContainers';
 
 const statusBarStyle = {
     background: 'ghostwhite',
@@ -11,8 +12,6 @@ const statusBarStyle = {
 
 const emptyStyle = {
     background: 'white',
-    display: 'flex',
-    flex: 'auto',
     alignItems: 'center',
     justifyContent: 'center',
 };
@@ -47,9 +46,9 @@ class SearchResult extends Component {
     render() {
         if (!this.props.items || this.props.items.length === 0) {
             return (
-                <div style={emptyStyle}>
+                <ColumnsLayout style={emptyStyle}>
                     <Empty />
-                </div>
+                </ColumnsLayout>
             );
         }
         return (

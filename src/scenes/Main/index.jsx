@@ -4,6 +4,7 @@ import SearchBar from './components/SearchBar';
 import SearchResult from './components/SearchResult';
 import FilmInfo from './components/FilmInfo';
 import Films from './components/Films';
+import { ColumnsLayout } from '../../components/LayoutContainers';
 
 const initialState = {
     searchByTitle: true,
@@ -27,12 +28,6 @@ const filmsStub = (new Array(42)).fill({}, 0).map((elem, index) => (
         duration: '165',
         description: 'winter coming, winter coming, winter coming, winter coming, winter coming...',
     }));
-
-const contentContainer = {
-    display: 'flex',
-    flexDirection: 'column',
-    flex: 'auto',
-};
 
 const statusBarStyle = {
     background: 'ghostwhite',
@@ -97,9 +92,9 @@ class Main extends Component {
             const searchResult = filmsStub.filter((film) => {
                 const str = text.toLowerCase();
                 const foundTitle = this.state.searchByTitle
-                && film.title.toLowerCase().search(str) !== -1;
+                    && film.title.toLowerCase().search(str) !== -1;
                 const foundGenre = this.state.searchByGenre
-                && film.genre.toLowerCase().search(str) !== -1;
+                    && film.genre.toLowerCase().search(str) !== -1;
                 return foundTitle || foundGenre;
             });
 
@@ -116,43 +111,35 @@ class Main extends Component {
         if (this.state.view === 'film') {
             return (
                 <ErrorBoundary>
-                    <div>
-                        <FilmInfo
-                            film={this.state.selectedFilm}
-                            backCallBack={this.backToSearch}
-                        />
-                    </div>
+                    <FilmInfo
+                        film={this.state.selectedFilm}
+                        backCallBack={this.backToSearch}
+                    />
                     <div style={statusBarStyle}>
                         Films by {this.state.selectedFilm.genre} genre
                     </div>
-                    <div style={contentContainer}>
-                        <Films
-                            items={this.getFilmsBySelectedFilmGenre()}
-                            onItemClick={this.selectFilm}
-                        />
-                    </div>
+                    <Films
+                        items={this.getFilmsBySelectedFilmGenre()}
+                        onItemClick={this.selectFilm}
+                    />
                 </ErrorBoundary>
             );
         }
 
         return (
             <ErrorBoundary>
-                <div>
-                    <SearchBar
-                        searchCallBack={this.search}
-                        filters={{
-                            title: this.state.searchByTitle,
-                            genre: this.state.searchByGenre,
-                        }}
-                        updateSearchFilter={this.updateSearchFilter}
-                    />
-                </div>
-                <div style={contentContainer}>
-                    <SearchResult
-                        items={this.getCurrentSearchResult()}
-                        onItemClick={this.selectFilm}
-                    />
-                </div>
+                <SearchBar
+                    searchCallBack={this.search}
+                    filters={{
+                        title: this.state.searchByTitle,
+                        genre: this.state.searchByGenre,
+                    }}
+                    updateSearchFilter={this.updateSearchFilter}
+                />
+                <SearchResult
+                    items={this.getCurrentSearchResult()}
+                    onItemClick={this.selectFilm}
+                />
             </ErrorBoundary>
         );
     }

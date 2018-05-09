@@ -1,14 +1,8 @@
 import React from 'react';
 import Item from './components/Item';
-
-const style = {
-    background: 'white',
-    padding: '1em',
-    flex: 'auto',
-};
+import { RowsLayout } from '../../../../components/LayoutContainers';
 
 const itemStyle = {
-    display: 'inline-block',
     width: '25%',
 };
 
@@ -17,7 +11,7 @@ const Films = ({ items, onItemClick }) => {
         return null;
     }
     return (
-        <div style={style}>
+        <RowsLayout style={{ background: 'white', overflowY: 'auto' }}>
             {
                 items.map(item => (
                     <div
@@ -29,7 +23,7 @@ const Films = ({ items, onItemClick }) => {
                         <Item item={item} />
                     </div>))
             }
-        </div>
+        </RowsLayout >
     );
 };
 
