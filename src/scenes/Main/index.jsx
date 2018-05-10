@@ -4,7 +4,7 @@ import SearchBar from './components/SearchBar';
 import SearchResult from './components/SearchResult';
 import FilmInfo from './components/FilmInfo';
 import Films from './components/Films';
-import FilmsSearchService from './services/search';
+import { searchByGenres, searchByTitle, searchByGenre } from './components/films-search-service';
 
 const statusBarStyle = {
     background: 'ghostwhite',
@@ -14,7 +14,6 @@ const statusBarStyle = {
 class Main extends Component {
     constructor(props) {
         super(props);
-        this.searchService = new FilmsSearchService();
         this.state = {
             searchByTitle: true,
             searchByGenre: false,
@@ -27,7 +26,7 @@ class Main extends Component {
     getFilmsBySelectedFilmGenre() {
         const filmGenre = this.state.selectedFilm.genre;
         if (filmGenre) {
-            return this.searchService.searchByGenres(filmGenre);
+            return searchByGenres(filmGenre);
         }
         return [];
     }
@@ -62,10 +61,10 @@ class Main extends Component {
     search = (text) => {
         if (text) {
             const searchTitleResult = this.state.searchByTitle
-                ? this.searchService.searchByTitle(text)
+                ? searchByTitle(text)
                 : [];
             const searchByGenreResult = this.state.searchByGenre
-                ? this.searchService.searchByGenre(text)
+                ? searchByGenre(text)
                 : [];
 
             const searchResult = Immutable.Set([]).union(searchTitleResult, searchByGenreResult);
