@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import TextSearchField from './components/TextSearchField';
 import SearchButton from './components/SearchButton';
 import SearchFilter from './components/SearchFilter/intex';
-import { transparentPanel } from '../../../../styleguide/style';
 import { BlackTransparentPanel } from '../../../../components/BlackTransparentPanel';
 
 const contentPadding = {

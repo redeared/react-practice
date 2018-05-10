@@ -1,7 +1,7 @@
 import React, { Fragment, Component } from 'react';
 import { highlightColor } from '../../../../../../styleguide/style';
 
-const activeSearchOption = { backgroundColor: highlightColor.color };
+const activeSearchOption = { backgroundColor: highlightColor };
 class SearchFilter extends Component {
     getFilters = () => this.props.filters;
     handleTitleClick = () => {

@@ -1,3 +1,1 @@
-export const highlightColor = {
-    color: '#f45362',
-};
+export const highlightColor = '#f45362';

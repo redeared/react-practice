@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import { highlightColor } from '../../../../../../styleguide/style';
 
+const activeOption = { color: highlightColor };
+
 class ItemsSort extends Component {
     getSortOrder = () => this.props.sortOrder;
     sortByDate = () => {
@@ -23,7 +25,7 @@ class ItemsSort extends Component {
                 Sort by:
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByReleaseDate ? highlightColor : null}
+                    style={this.getSortOrder().sortByReleaseDate ? activeOption : null}
                     onClick={this.sortByDate}
                     tabIndex="0"
                     role="button"
@@ -33,7 +35,7 @@ class ItemsSort extends Component {
                 </span>
                 {' '}
                 <span
-                    style={this.getSortOrder().sortByRating ? highlightColor : null}
+                    style={this.getSortOrder().sortByRating ? activeOption : null}
                     onClick={this.sortByRating}
                     tabIndex="0"
                     role="button"

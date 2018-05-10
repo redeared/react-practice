@@ -3,7 +3,7 @@ import { highlightColor } from '../../styleguide/style';
 import { BlackTransparentPanel } from '../../components/BlackTransparentPanel';
 
 const headerText = {
-    ...highlightColor,
+    color: highlightColor,
     fontWeight: 'bold',
     paddingLeft: '4em',
 };
