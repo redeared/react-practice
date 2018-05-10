@@ -1,5 +1,5 @@
 import React from 'react';
-import { ColumnsLayout } from './components/layout-containers';
+import { ColumnsLayout, GrowLayoutBlock, FixedLayoutBlock } from './components/layout';
 import { Header } from './scenes/header/index';
 import { ErrorBoundary } from './components/error-boundary';
 import { Main } from './scenes/main/index';
@@ -19,19 +19,11 @@ const fullScreen = {
     overflow: 'auto',
 };
 
-const boxRowHeader = {
-    flex: '0 1 auto',
-};
-
-const boxRowFooter = {
-    flex: '0 1 auto',
-};
-
 export const App = () => (
     <ColumnsLayout style={{ ...fullScreen, ...bgImage }}>
-        <div style={boxRowHeader}>
+        <FixedLayoutBlock>
             <Header />
-        </div>
+        </FixedLayoutBlock>
 
         <ErrorBoundary>
             <ColumnsLayout style={{ overflowY: 'auto' }}>
@@ -39,8 +31,8 @@ export const App = () => (
             </ColumnsLayout>
         </ErrorBoundary>
 
-        <div style={boxRowFooter}>
+        <FixedLayoutBlock>
             <Footer />
-        </div>
+        </FixedLayoutBlock>
     </ColumnsLayout>
 );

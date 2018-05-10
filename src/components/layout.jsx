@@ -15,10 +15,22 @@ const flexRowContainer = {
     display: 'flex',
     flexDirection: 'row',
     flexWrap: 'wrap',
-    flex: '1 1 auto',
+    height: '100%',
 };
 export const RowsLayout = ({ style, children, ...rest }) => (
     <div style={{ ...flexRowContainer, ...style }} {...rest} >
+        {children}
+    </div>
+);
+
+export const GrowLayoutBlock = ({ style, children, ...rest }) => (
+    <div style={{ flexGrow: '1', ...style }} {...rest} >
+        {children}
+    </div>
+);
+
+export const FixedLayoutBlock = ({ style, basis, children, ...rest }) => (
+    <div style={{ flexBasis: basis || 0, ...style }} {...rest} >
         {children}
     </div>
 );

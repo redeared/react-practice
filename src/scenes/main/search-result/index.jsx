@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { ColumnsLayout } from './../../../components/layout-containers';
+import { ColumnsLayout } from './../../../components/layout';
 import { ResultStatus } from './result-status';
 import { ResultSort } from './result-sort';
 import { Films } from './../films/index';
