@@ -11,5 +11,3 @@ export class SecondGreeting extends React.Component {
         );
     }
 }
-
-export default SecondGreeting;

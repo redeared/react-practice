@@ -1,13 +1,13 @@
 import React from 'react';
-import ImagePreview from '../../../../components/ImagePreview';
-import Rating from './components/Rating';
-import { BlackTransparentPanel } from '../../../../components/BlackTransparentPanel';
+import { FilmRating } from './film-rating';
+import { ImagePreview } from '../../../components/image-preview';
+import { BlackTransparentPanel } from './../../../components/black-transparent-panel';
 
 const style = {
     paddingLeft: '1em',
 };
 
-const FilmInfo = ({ film, onBackToSearch }) => (
+export const FilmInfo = ({ film, onBackToSearch }) => (
     <BlackTransparentPanel style={style}>
         <div>
             <button onClick={() => onBackToSearch()}>SEARCH</button>
@@ -16,7 +16,7 @@ const FilmInfo = ({ film, onBackToSearch }) => (
         <div>
             {film.title.toUpperCase()}
             {'  '}
-            <Rating value="10/10" />
+            <FilmRating value="10/10" />
         </div>
         <div>
             {film.date} {'  '} {film.duration} min
@@ -24,5 +24,3 @@ const FilmInfo = ({ film, onBackToSearch }) => (
         <div>{film.description}</div>
     </BlackTransparentPanel>
 );
-
-export default FilmInfo;

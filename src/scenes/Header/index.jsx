@@ -1,6 +1,6 @@
 import React from 'react';
 import { highlightColor } from '../../styleguide/style';
-import { BlackTransparentPanel } from '../../components/BlackTransparentPanel';
+import { BlackTransparentPanel } from '../../components/black-transparent-panel';
 
 const headerText = {
     color: highlightColor,
@@ -8,10 +8,8 @@ const headerText = {
     paddingLeft: '4em',
 };
 
-const Header = () => (
+export const Header = () => (
     <BlackTransparentPanel>
         <span style={headerText}> netflixroulette </span>
     </BlackTransparentPanel>
 );
-
-export default Header;

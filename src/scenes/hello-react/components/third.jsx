@@ -14,5 +14,3 @@ export class ThirdGreeting extends React.PureComponent {
         );
     }
 }
-
-export default ThirdGreeting;

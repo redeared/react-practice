@@ -1,6 +1,6 @@
 import React from 'react';
 import { highlightColor } from '../../styleguide/style';
-import { BlackTransparentPanel } from '../../components/BlackTransparentPanel';
+import { BlackTransparentPanel } from '../../components/black-transparent-panel';
 
 const footerText = {
     color: highlightColor,
@@ -8,10 +8,8 @@ const footerText = {
     paddingLeft: '4em',
 };
 
-const Footer = () => (
+export const Footer = () => (
     <BlackTransparentPanel>
         <span style={footerText}>netflixroulette</span>
     </BlackTransparentPanel>
 );
-
-export default Footer;

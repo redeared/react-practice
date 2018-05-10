@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TextSearchField extends React.Component {
+export class SearchTextField extends React.Component {
     handleKeyPress = (e) => {
         if (e.key === 'Enter') {
             this.props.onEnter();
@@ -15,5 +15,3 @@ class TextSearchField extends React.Component {
         return <input type="text" onKeyPress={this.handleKeyPress} onChange={this.handleChange} />;
     }
 }
-
-export default TextSearchField;

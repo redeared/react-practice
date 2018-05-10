@@ -5,5 +5,3 @@ export const firstGreeting = React.createElement(
     'Hello World!',
     <div> From first - React.createElement</div >,
 );
-
-export default firstGreeting;

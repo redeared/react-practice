@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import TextSearchField from './components/TextSearchField';
-import SearchButton from './components/SearchButton';
-import SearchFilter from './components/SearchFilter/intex';
-import { BlackTransparentPanel } from '../../../../components/BlackTransparentPanel';
+import { BlackTransparentPanel } from '../../../components/black-transparent-panel';
+import { SearchButton } from './search-button';
+import { SearchTextField } from './search-text-field';
+import { SearchFilter } from './search-filter';
 
 const contentPadding = {
     paddingLeft: '4em',
@@ -11,7 +11,7 @@ const contentPadding = {
 
 const searchButtonPosition = { float: 'right' };
 
-class SearchBar extends Component {
+export class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = { searchText: null };
@@ -39,7 +39,7 @@ class SearchBar extends Component {
                     FIND YOUR MOVIE
                 </div>
                 <div>
-                    <TextSearchField
+                    <SearchTextField
                         onChange={this.updateSearchText}
                         onEnter={this.search}
                     />
@@ -57,5 +57,3 @@ class SearchBar extends Component {
         );
     }
 }
-
-export default SearchBar;

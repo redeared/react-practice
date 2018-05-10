@@ -1,27 +1,24 @@
 import React, { Component, Fragment } from 'react';
 import Immutable from 'immutable';
-import SearchBar from './components/SearchBar';
-import SearchResult from './components/SearchResult';
-import FilmInfo from './components/FilmInfo';
-import Films from './components/Films';
-import { searchByGenres, searchByTitle, searchByGenre } from './components/films-search-service';
+import { searchByGenres, searchByTitle, searchByGenre } from './films-search-service';
+import { FilmInfo } from './film-Info';
+import { Films } from './films';
+import { SearchBar } from './search-bar';
+import { SearchResult } from './search-result';
 
 const statusBarStyle = {
     background: 'ghostwhite',
     padding: '0 4em 0 4em',
 };
 
-class Main extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchByTitle: true,
-            searchByGenre: false,
-            view: 'search',
-            selectedFilm: null,
-            currentSearchResult: null,
-        };
-    }
+export class Main extends Component {
+    state = {
+        searchByTitle: true,
+        searchByGenre: false,
+        view: 'search',
+        selectedFilm: null,
+        currentSearchResult: null,
+    };
 
     getFilmsBySelectedFilmGenre() {
         const filmGenre = this.state.selectedFilm.genre;
@@ -115,5 +112,3 @@ class Main extends Component {
         );
     }
 }
-
-export default Main;

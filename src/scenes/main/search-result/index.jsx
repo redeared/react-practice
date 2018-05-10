@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
-import Empty from './components/Empty';
-import ItemsStatus from './components/ItemsStatus';
-import ItemsSort from './components/ItemsSort';
-import Films from '../Films';
-import { ColumnsLayout } from '../../../../components/LayoutContainers';
+import { ColumnsLayout } from './../../../components/layout-containers';
+import { ResultStatus } from './result-status';
+import { ResultSort } from './result-sort';
+import { Films } from './../films/index';
+import { EmptyResult } from './empty-result';
 
 const statusBarStyle = {
     background: 'ghostwhite',
@@ -18,7 +18,7 @@ const emptyStyle = {
 
 const sortingControlsPosition = { float: 'right' };
 
-class SearchResult extends Component {
+export class SearchResult extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -47,16 +47,16 @@ class SearchResult extends Component {
         if (!this.props.items || this.props.items.length === 0) {
             return (
                 <ColumnsLayout style={emptyStyle}>
-                    <Empty />
+                    <EmptyResult />
                 </ColumnsLayout>
             );
         }
         return (
             <Fragment>
                 <div style={statusBarStyle}>
-                    <ItemsStatus items={this.getItems()} />
+                    <ResultStatus items={this.getItems()} />
                     <span style={sortingControlsPosition}>
-                        <ItemsSort
+                        <ResultSort
                             sortOrder={{
                                 sortByRating: this.state.sortByRating,
                                 sortByReleaseDate: this.state.sortByReleaseDate,
@@ -70,5 +70,3 @@ class SearchResult extends Component {
         );
     }
 }
-
-export default SearchResult;

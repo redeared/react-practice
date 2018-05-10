@@ -23,5 +23,3 @@ export const render4WaysOfGreeting = () => {
     ReactDOM.render(<ThirdGreeting />, document.getElementById('third'));
     ReactDOM.render(<FourthGreeting visitor="World" />, document.getElementById('fourth'));
 };
-
-export default render4WaysOfGreeting;

@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
-import { highlightColor } from '../../../../../../styleguide/style';
+import { highlightColor } from './../../../styleguide/style';
 
 const activeSearchOption = { backgroundColor: highlightColor };
 
-class SearchFilter extends Component {
+export class SearchFilter extends Component {
     getFilters = () => this.props.filters;
     handleTitleClick = () => {
         this.props.changeFilter({
@@ -38,5 +38,3 @@ class SearchFilter extends Component {
         );
     }
 }
-
-export default SearchFilter;

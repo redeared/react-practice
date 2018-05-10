@@ -1,9 +1,9 @@
 import React, { Fragment, Component } from 'react';
-import { highlightColor } from '../../../../../../styleguide/style';
+import { highlightColor } from '../../../styleguide/style';
 
 const activeOption = { color: highlightColor };
 
-class ItemsSort extends Component {
+export class ResultSort extends Component {
     getSortOrder = () => this.props.sortOrder;
     sortByDate = () => {
         this.props.changeSortOrder({
@@ -48,5 +48,3 @@ class ItemsSort extends Component {
         );
     }
 }
-
-export default ItemsSort;
