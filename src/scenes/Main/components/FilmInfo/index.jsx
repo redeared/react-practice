@@ -1,14 +1,14 @@
 import React from 'react';
 import ImagePreview from '../../../../components/ImagePreview';
 import Rating from './components/Rating';
-import { transparentPanel } from '../../../../styleguide/style';
+import { BlackTransparentPanel } from '../../../../components/BlackTransparentPanel';
 
 const style = {
     paddingLeft: '1em',
 };
 
 const FilmInfo = ({ film, onBackToSearch }) => (
-    <div style={{ ...style, ...transparentPanel }}>
+    <BlackTransparentPanel style={style}>
         <div>
             <button onClick={() => onBackToSearch()}>SEARCH</button>
         </div>
@@ -22,7 +22,7 @@ const FilmInfo = ({ film, onBackToSearch }) => (
             {film.date} {'  '} {film.duration} min
         </div>
         <div>{film.description}</div>
-    </div>
+    </BlackTransparentPanel>
 );
 
 export default FilmInfo;

@@ -3,6 +3,7 @@ import TextSearchField from './components/TextSearchField';
 import SearchButton from './components/SearchButton';
 import SearchFilter from './components/SearchFilter/intex';
 import { transparentPanel } from '../../../../styleguide/style';
+import { BlackTransparentPanel } from '../../../../components/BlackTransparentPanel';
 
 const contentPadding = {
     paddingLeft: '4em',
@@ -34,7 +35,7 @@ class SearchBar extends Component {
 
     render() {
         return (
-            <div style={{ ...transparentPanel, ...contentPadding }}>
+            <BlackTransparentPanel style={contentPadding}>
                 <div>
                     FIND YOUR MOVIE
                 </div>
@@ -53,7 +54,7 @@ class SearchBar extends Component {
                         <SearchButton onClick={this.search} />
                     </div>
                 </div>
-            </div>
+            </BlackTransparentPanel>
         );
     }
 }

@@ -1,5 +1,6 @@
 import React from 'react';
-import { transparentPanel, highlightColor } from '../../styleguide/style';
+import { highlightColor } from '../../styleguide/style';
+import { BlackTransparentPanel } from '../../components/BlackTransparentPanel';
 
 const headerText = {
     ...highlightColor,
@@ -8,9 +9,9 @@ const headerText = {
 };
 
 const Header = () => (
-    <div style={transparentPanel}>
+    <BlackTransparentPanel>
         <span style={headerText}> netflixroulette </span>
-    </div>
+    </BlackTransparentPanel>
 );
 
 export default Header;

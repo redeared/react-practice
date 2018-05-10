@@ -1,5 +1,6 @@
 import React from 'react';
-import { transparentPanel, highlightColor } from '../../styleguide/style';
+import { highlightColor } from '../../styleguide/style';
+import { BlackTransparentPanel } from '../../components/BlackTransparentPanel';
 
 const footerText = {
     ...highlightColor,
@@ -8,9 +9,9 @@ const footerText = {
 };
 
 const Footer = () => (
-    <div style={transparentPanel}>
+    <BlackTransparentPanel>
         <span style={footerText}>netflixroulette</span>
-    </div>
+    </BlackTransparentPanel>
 );
 
 export default Footer;
