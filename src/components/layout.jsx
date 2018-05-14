@@ -3,7 +3,7 @@ import React from 'react';
 const flexColumnContainer = {
     display: 'flex',
     flexDirection: 'column',
-    flex: '1 1 auto',
+    height: '100%',
 };
 export const ColumnsLayout = ({ style, children, ...rest }) => (
     <div style={{ ...flexColumnContainer, ...style }} {...rest} >
