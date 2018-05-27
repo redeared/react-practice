@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders without crashing 1`] = `
+<div
+  style={
+    Object {
+      "backgroundImage": "url('https://assets.nflxext.com/ffe/siteui/vlv3/80ffdc60-07ad-4e9e-829f-7969df93981c/524ebc0c-5887-4814-9015-7551eeb56858/RU-en-20180423-popsignuptwoweeks-perspective_alpha_website_small.jpg')",
+      "bottom": 0,
+      "display": "flex",
+      "flexDirection": "column",
+      "height": "100%",
+      "left": 0,
+      "margin": "0 2em",
+      "overflow": "auto",
+      "position": "fixed",
+      "right": 0,
+      "top": 0,
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "flexBasis": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "rgba(0, 0, 0, 0.7)",
+          "color": "white",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "color": "#f45362",
+            "fontWeight": "bold",
+            "paddingLeft": "4em",
+          }
+        }
+      >
+         netflixroulette 
+      </span>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "flexDirection": "column",
+        "height": "100%",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "rgba(0, 0, 0, 0.7)",
+          "color": "white",
+          "paddingLeft": "4em",
+          "paddingRight": "4em",
+        }
+      }
+    >
+      <div>
+        FIND YOUR MOVIE
+      </div>
+      <div>
+        <input
+          onChange={[Function]}
+          onKeyPress={[Function]}
+          type="text"
+        />
+      </div>
+      <div>
+        SEARCH BY: 
+        <button
+          onClick={[Function]}
+          style={
+            Object {
+              "backgroundColor": "#f45362",
+            }
+          }
+        >
+          TITLE
+        </button>
+        <button
+          onClick={[Function]}
+          style={null}
+        >
+          GENRE
+        </button>
+        <div
+          style={
+            Object {
+              "float": "right",
+            }
+          }
+        >
+          <button
+            onClick={[Function]}
+          >
+            SEARCH
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "background": "white",
+          "display": "flex",
+          "flexDirection": "column",
+          "height": "100%",
+          "justifyContent": "center",
+        }
+      }
+    >
+      <h1>
+         No films found 
+      </h1>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "flexBasis": 0,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "background": "rgba(0, 0, 0, 0.7)",
+          "color": "white",
+        }
+      }
+    >
+      <span
+        style={
+          Object {
+            "color": "#f45362",
+            "fontWeight": "bold",
+            "paddingLeft": "4em",
+          }
+        }
+      >
+        netflixroulette
+      </span>
+    </div>
+  </div>
+</div>
+`;
