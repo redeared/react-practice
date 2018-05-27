@@ -1,7 +1,7 @@
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
 File                                          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                     |    47.47 |    18.18 |    29.58 |    50.35 |                   |
+All files                                     |    57.59 |    27.27 |    42.25 |    57.34 |                   |
  react-practice                               |      100 |      100 |      100 |      100 |                   |
   testframawork-configure.js                  |      100 |      100 |      100 |      100 |                   |
  react-practice/src                           |      100 |      100 |      100 |      100 |                   |
@@ -17,10 +17,10 @@ All files                                     |    47.47 |    18.18 |    29.58 |
   index.jsx                                   |      100 |      100 |      100 |      100 |                   |
  react-practice/src/scenes/header             |      100 |      100 |      100 |      100 |                   |
   index.jsx                                   |      100 |      100 |      100 |      100 |                   |
- react-practice/src/scenes/main               |    29.09 |       10 |    17.39 |    32.61 |                   |
-  films-search-service.js                     |       50 |      100 |        0 |      100 |                   |
-  index.jsx                                   |    22.22 |    16.67 |    28.57 |    22.22 |... 63,67,69,73,80 |
-  search-stub.js                              |    29.03 |        0 |    15.38 |       32 |... 39,40,41,42,45 |
+ react-practice/src/scenes/main               |    58.18 |       35 |    56.52 |    54.35 |                   |
+  films-search-service.js                     |    66.67 |      100 |    33.33 |      100 |                   |
+  index.jsx                                   |    44.44 |    33.33 |    42.86 |    44.44 |... 60,63,67,69,73 |
+  search-stub.js                              |    64.52 |     37.5 |    69.23 |       56 |... 39,40,41,42,45 |
  react-practice/src/scenes/main/film-Info     |       50 |      100 |        0 |       60 |                   |
   film-rating.jsx                             |       50 |      100 |        0 |      100 |                   |
   index.jsx                                   |       50 |      100 |        0 |       50 |             11,13 |
@@ -43,7 +43,7 @@ All files                                     |    47.47 |    18.18 |    29.58 |
  react-practice/src/styleguide                |      100 |      100 |      100 |      100 |                   |
   style.jsx                                   |      100 |      100 |      100 |      100 |                   |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-Jest: "global" coverage threshold for statements (60%) not met: 47.47%
-Jest: "global" coverage threshold for branches (60%) not met: 18.18%
-Jest: "global" coverage threshold for lines (60%) not met: 50.35%
-Jest: "global" coverage threshold for functions (60%) not met: 29.58%
+Jest: "global" coverage threshold for statements (60%) not met: 57.59%
+Jest: "global" coverage threshold for branches (60%) not met: 27.27%
+Jest: "global" coverage threshold for lines (60%) not met: 57.34%
+Jest: "global" coverage threshold for functions (60%) not met: 42.25%
