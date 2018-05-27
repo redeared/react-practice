@@ -1,14 +1,14 @@
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
 File                                          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                     |    57.59 |    27.27 |    42.25 |    57.34 |                   |
+All files                                     |    60.65 |    29.09 |    43.66 |    60.71 |                   |
  react-practice                               |      100 |      100 |      100 |      100 |                   |
   testframawork-configure.js                  |      100 |      100 |      100 |      100 |                   |
  react-practice/src                           |      100 |      100 |      100 |      100 |                   |
   app.jsx                                     |      100 |      100 |      100 |      100 |                   |
- react-practice/src/components                |    65.22 |       75 |     62.5 |    65.22 |                   |
+ react-practice/src/components                |       90 |      100 |       75 |       90 |                   |
   black-transparent-panel.jsx                 |      100 |      100 |      100 |      100 |                   |
-  error-boundary.jsx                          |       40 |       50 |    66.67 |       40 | 10,11,12,13,14,19 |
+  error-boundary.jsx                          |      100 |      100 |      100 |      100 |                   |
   layout.jsx                                  |       80 |      100 |       50 |       80 |             21,27 |
  react-practice/src/components/image-preview  |       75 |      100 |        0 |      100 |                   |
   index.jsx                                   |       50 |      100 |        0 |      100 |                   |
@@ -43,7 +43,7 @@ All files                                     |    57.59 |    27.27 |    42.25 |
  react-practice/src/styleguide                |      100 |      100 |      100 |      100 |                   |
   style.jsx                                   |      100 |      100 |      100 |      100 |                   |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-Jest: "global" coverage threshold for statements (60%) not met: 57.59%
-Jest: "global" coverage threshold for branches (60%) not met: 27.27%
-Jest: "global" coverage threshold for lines (60%) not met: 57.34%
-Jest: "global" coverage threshold for functions (60%) not met: 42.25%
+Jest: "global" coverage threshold for statements (80%) not met: 60.65%
+Jest: "global" coverage threshold for branches (80%) not met: 29.09%
+Jest: "global" coverage threshold for lines (80%) not met: 60.71%
+Jest: "global" coverage threshold for functions (80%) not met: 43.66%
