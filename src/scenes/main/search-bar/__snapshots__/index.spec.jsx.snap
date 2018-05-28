@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchBar should render without crash 1`] = `
+<div
+  style={
+    Object {
+      "background": "rgba(0, 0, 0, 0.7)",
+      "color": "white",
+      "paddingLeft": "4em",
+      "paddingRight": "4em",
+    }
+  }
+>
+  <div>
+    FIND YOUR MOVIE
+  </div>
+  <div>
+    <input
+      onChange={[Function]}
+      onKeyPress={[Function]}
+      type="text"
+    />
+  </div>
+  <div>
+    SEARCH BY: 
+    <button
+      onClick={[Function]}
+      style={null}
+    >
+      TITLE
+    </button>
+    <button
+      onClick={[Function]}
+      style={null}
+    >
+      GENRE
+    </button>
+    <div
+      style={
+        Object {
+          "float": "right",
+        }
+      }
+    >
+      <button
+        onClick={[Function]}
+      >
+        SEARCH
+      </button>
+    </div>
+  </div>
+</div>
+`;

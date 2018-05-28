@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultSort should render without chash 1`] = `
+Array [
+  "Sort by:",
+  " ",
+  <span
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="button"
+    style={null}
+    tabIndex="0"
+  >
+    release date
+  </span>,
+  " ",
+  <span
+    onClick={[Function]}
+    onKeyPress={[Function]}
+    role="button"
+    style={null}
+    tabIndex="0"
+  >
+    rating
+  </span>,
+]
+`;

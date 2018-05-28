@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout components GrowLayoutBlock should render without crash 1`] = `
+<div
+  style={
+    Object {
+      "flexGrow": "1",
+    }
+  }
+>
+  child
+</div>
+`;
+
+exports[`Layout components RowsLayout should render without crash 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "flexWrap": "wrap",
+      "height": "100%",
+    }
+  }
+>
+  child
+</div>
+`;

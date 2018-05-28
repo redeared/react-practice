@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Film should render without crash 1`] = `
+Array [
+  <img
+    alt="title"
+    className="img"
+    src=""
+  />,
+  <div>
+    TITLE
+      
+    <span>
+      date
+    </span>
+  </div>,
+  <div />,
+]
+`;
