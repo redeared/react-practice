@@ -1,7 +1,7 @@
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
 File                                          |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-All files                                     |    72.15 |    41.82 |    63.38 |    71.33 |                   |
+All files                                     |    91.14 |       80 |    84.51 |    90.91 |                   |
  react-practice                               |      100 |      100 |      100 |      100 |                   |
   testframawork-configure.js                  |      100 |      100 |      100 |      100 |                   |
  react-practice/src                           |      100 |      100 |      100 |      100 |                   |
@@ -17,33 +17,29 @@ All files                                     |    72.15 |    41.82 |    63.38 |
   index.jsx                                   |      100 |      100 |      100 |      100 |                   |
  react-practice/src/scenes/header             |      100 |      100 |      100 |      100 |                   |
   index.jsx                                   |      100 |      100 |      100 |      100 |                   |
- react-practice/src/scenes/main               |    58.18 |       35 |    56.52 |    54.35 |                   |
-  films-search-service.js                     |    66.67 |      100 |    33.33 |      100 |                   |
-  index.jsx                                   |    44.44 |    33.33 |    42.86 |    44.44 |... 60,63,67,69,73 |
-  search-stub.js                              |    64.52 |     37.5 |    69.23 |       56 |... 39,40,41,42,45 |
+ react-practice/src/scenes/main               |    89.09 |       75 |    86.96 |    86.96 |                   |
+  films-search-service.js                     |      100 |      100 |      100 |      100 |                   |
+  index.jsx                                   |    83.33 |    83.33 |    57.14 |    83.33 |          38,45,52 |
+  search-stub.js                              |    90.32 |     62.5 |      100 |       88 |          25,35,45 |
  react-practice/src/scenes/main/film-Info     |    83.33 |      100 |    66.67 |       80 |                   |
   film-rating.jsx                             |      100 |      100 |      100 |      100 |                   |
   index.jsx                                   |       75 |      100 |       50 |       75 |                13 |
- react-practice/src/scenes/main/films         |       50 |       50 |    33.33 |       50 |                   |
-  index.jsx                                   |       50 |       50 |    33.33 |       50 |           9,13,16 |
+ react-practice/src/scenes/main/films         |    83.33 |      100 |    66.67 |    83.33 |                   |
+  index.jsx                                   |    83.33 |      100 |    66.67 |    83.33 |                16 |
  react-practice/src/scenes/main/films/film    |      100 |      100 |      100 |      100 |                   |
   film-cover.jsx                              |      100 |      100 |      100 |      100 |                   |
   film-release-date.jsx                       |      100 |      100 |      100 |      100 |                   |
   index.jsx                                   |      100 |      100 |      100 |      100 |                   |
- react-practice/src/scenes/main/search-bar    |       70 |    83.33 |    57.14 |    72.22 |                   |
-  index.jsx                                   |     62.5 |      100 |       40 |     62.5 |          21,25,29 |
+ react-practice/src/scenes/main/search-bar    |       75 |    83.33 |    64.29 |    77.78 |                   |
+  index.jsx                                   |       75 |      100 |       60 |       75 |             21,29 |
   search-button.jsx                           |    66.67 |      100 |       50 |      100 |                   |
   search-filter.jsx                           |       60 |       75 |       50 |       60 |              9,16 |
   search-text-field.jsx                       |      100 |      100 |      100 |      100 |                   |
- react-practice/src/scenes/main/search-result |    57.69 |    26.09 |    46.15 |       56 |                   |
+ react-practice/src/scenes/main/search-result |    96.15 |    78.26 |    92.31 |       96 |                   |
   empty-result.jsx                            |      100 |      100 |      100 |      100 |                   |
-  index.jsx                                   |    46.67 |       25 |    28.57 |    46.67 |... 34,36,37,41,54 |
-  result-sort.jsx                             |       60 |       50 |       50 |       60 |              9,16 |
-  result-status.jsx                           |       75 |    14.29 |      100 |       75 |                 7 |
+  index.jsx                                   |      100 |       75 |      100 |      100 |             36,40 |
+  result-sort.jsx                             |       80 |       75 |       75 |       80 |                 9 |
+  result-status.jsx                           |      100 |    85.71 |      100 |      100 |                 8 |
  react-practice/src/styleguide                |      100 |      100 |      100 |      100 |                   |
   style.jsx                                   |      100 |      100 |      100 |      100 |                   |
 ----------------------------------------------|----------|----------|----------|----------|-------------------|
-Jest: "global" coverage threshold for statements (80%) not met: 72.15%
-Jest: "global" coverage threshold for branches (80%) not met: 41.82%
-Jest: "global" coverage threshold for lines (80%) not met: 71.33%
-Jest: "global" coverage threshold for functions (80%) not met: 63.38%

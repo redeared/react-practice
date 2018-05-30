@@ -1,3 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResultStatus should render without crash 1`] = `null`;
+exports[`ResultStatus should render without crash 1`] = `
+<span>
+   
+  1
+   movie
+   found 
+</span>
+`;

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchResult should render without crash 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "background": "ghostwhite",
+        "padding": "0 4em 0 4em",
+      }
+    }
+  >
+    <span>
+       
+      1
+       movie
+       found 
+    </span>
+    <span
+      style={
+        Object {
+          "float": "right",
+        }
+      }
+    >
+      Sort by:
+       
+      <span
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        style={null}
+        tabIndex="0"
+      >
+        release date
+      </span>
+       
+      <span
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        role="button"
+        style={
+          Object {
+            "color": "#f45362",
+          }
+        }
+        tabIndex="0"
+      >
+        rating
+      </span>
+    </span>
+  </div>,
+  <div
+    style={
+      Object {
+        "background": "white",
+        "display": "flex",
+        "flexDirection": "row",
+        "flexWrap": "wrap",
+        "height": "100%",
+        "overflowY": "auto",
+      }
+    }
+  >
+    <div
+      onClick={[Function]}
+      role="presentation"
+      style={
+        Object {
+          "flexBasis": "25%",
+        }
+      }
+    >
+      <img
+        alt="title"
+        className="img"
+        src=""
+      />
+      <div>
+        TITLE
+          
+        <span />
+      </div>
+      <div />
+    </div>
+  </div>,
+]
+`;

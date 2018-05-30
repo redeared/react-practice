@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ResultSort should render without chash 1`] = `
+exports[`ResultSort should rendered without chash 1`] = `
 Array [
   "Sort by:",
   " ",
